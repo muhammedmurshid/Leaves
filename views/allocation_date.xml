@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="allocation_date" model="ir.ui.view">
+        <field name="name">Allocation Date</field>
+        <field name="model">hr.leave.allocation</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='number_of_days_display']"
+                   position="after">
+                <field name="date_allocation"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="allocation_date_tree" model="ir.ui.view">
+        <field name="name">Allocation Date</field>
+        <field name="model">hr.leave.allocation</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']"
+                   position="after">
+                <field name="date_allocation"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
